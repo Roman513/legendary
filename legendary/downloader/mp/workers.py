@@ -170,6 +170,9 @@ class FileWorker(Process):
         last_filename = ''
         current_file = None
 
+        if not os.path.exists(self.cache_path):
+            os.makedirs(self.cache_path)
+
         while True:
             try:
                 try:
